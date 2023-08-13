@@ -16,7 +16,7 @@ public class WritingJUnit5Tests extends TestBase {
     @CsvFileSource(resources = "/Data4parameterizedTest.csv")
     @DisplayName("Проверка поиска на сайте jetbrains.com с помощью @CsvFileSource")
     @ParameterizedTest(name = "При поиске {0} в результатах отображается текст {1}")
-    void SearchWritingJunit5GuideCsvFileSource(String input, String result) {
+    void searchWritingJunit5GuideCsvFileSource(String input, String result) {
         jUnit5Page
                 .openGuidePage()
                 .setSearch(input)
@@ -29,7 +29,7 @@ public class WritingJUnit5Tests extends TestBase {
     }, delimiter = '|')
     @DisplayName("Проверка поиска на сайте jetbrains.com с помощью @CsvSource")
     @ParameterizedTest(name = "При поиске {0} в результатах отображается текст {1}")
-    void SearchWritingJunit5GuideCsvSource(String input, String result) {
+    void searchWritingJunit5GuideCsvSource(String input, String result) {
         jUnit5Page
                 .openGuidePage()
                 .setSearch(input)
@@ -46,7 +46,7 @@ public class WritingJUnit5Tests extends TestBase {
     @MethodSource(value = "jetbrainsSiteStreamSearchTest")
     @DisplayName("Проверка поиска на сайте jetbrains.com с помощью @MethodSource")
     @ParameterizedTest(name = "При поиске {0} в результатах отображается текст {0}")
-    void SearchJunit5LocaleMethodSource(String input) {
+    void searchJunit5LocaleMethodSource(String input) {
         jUnit5Page
                 .openGuidePage()
                 .setSearch(input)
